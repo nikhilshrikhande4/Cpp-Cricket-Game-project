@@ -105,17 +105,17 @@ Game ::Game()
     maxBalls = 6;
     totalPlyers = 11;
 
-    players[0] = "Rohit";
-    players[1] = "Hardik";
-    players[2] = "Dhoni";
-    players[3] = "Ishant";
-    players[4] = "Virat";
-    players[5] = "Bumrah";
-    players[6] = "Maxwell";
-    players[7] = "Siraj";
-    players[8] = "Ashwin";
-    players[9] = "Rahul";
-    players[10] = "Jadeja";
+    players[0] = "Rohit Sharma";
+    players[1] = "Hardik Pandya";
+    players[2] = "MS Dhoni";
+    players[3] = "Ishan Kishan";
+    players[4] = "Virat Kohli";
+    players[5] = "Jasprit Bumrah";
+    players[6] = "Glen Maxwell";
+    players[7] = "Mohmmad Siraj";
+    players[8] = "Ravichandran Ashwin";
+    players[9] = "KL Rahul";
+    players[10] = "Ravindra Jadeja";
 
     isFirstInnings = false;
     teamA.name = "Mumbai Indians";
@@ -148,6 +148,7 @@ int Game ::takeIntegerInput()
 }
 
 bool Game ::validateSelectedPlayer(int index)
+
 {
 
     int n;
@@ -522,8 +523,8 @@ void Game ::showGameScoreCard()
     cout << "------------------------------------------------------------------------------\n";
 
     cout << "\t" << battingTeam->name << " " << battingTeam->totalRunsScored << " - "
-         << battingTeam->wicketsLost << " (" << bowlingTeam->totalBallsBowled << ") |" << batsman->name
-         << " " << batsman->runScored << " (" << batsman->ballsPlayed << ") \t" << bowler->name << " "
+         << battingTeam->wicketsLost << " (" << bowlingTeam->totalBallsBowled << ") |"<< batsman->name
+         << " "<< batsman->runScored << " (" << batsman->ballsPlayed << ") \t" << bowler->name << " "
          << bowler->ballsBowled << " - " << bowler->runsGiven << " - " << bowler->wicketsTaken << "\t" << endl;
 
     cout << "------------------------------------------------------------------------------\n";
@@ -538,39 +539,39 @@ void Game ::showMatchSummary()
 
     cout << battingTeam->name << " " << battingTeam->totalRunsScored << "-" << battingTeam->wicketsLost << " (" << bowlingTeam->totalBallsBowled << ")" << endl;
 
-    cout << "*********************************************" << endl;
+    cout << "****************************************************" << endl;
     cout << "| PLAYER \t BATTING \t BOWLING \t |" << endl;
 
     for (int j = 0; j < playersPerTeam; j++)
     {
 
         Crick crick = battingTeam->players[j];
-        cout << "|-------------------------------------------|" << endl;
+        cout << "|-----------------------------------------------|" << endl;
         cout << "|"
              << "[" << j << "]" << crick.name << " \t"
              << crick.runScored << "(" << crick.ballsBowled << ") \t\t"
              << crick.ballsBowled << "-" << crick.runsGiven << "-"
              << crick.wicketsTaken << "\t |" << endl;
     }
-    cout << "*********************************************" << endl;
+    cout << "**************************************************" << endl;
 
-    cout << bowlingTeam->name << " " << bowlingTeam->totalRunsScored << " - " << bowlingTeam->wicketsLost << "(" << battingTeam->totalBallsBowled << ")" << endl;
+    cout << bowlingTeam->name << " " << bowlingTeam->totalRunsScored << "-" << bowlingTeam->wicketsLost << "(" << battingTeam->totalBallsBowled << ")" << endl;
 
-    cout << "*********************************************" << endl;
+    cout << "**************************************************" << endl;
     cout << "| PLAYER \t BATTING \t BOWLING \t |" << endl;
 
     for (int i = 0; i < playersPerTeam; i++)
     {
 
         Crick crick = bowlingTeam->players[i];
-        cout << "|------------------------------------------|" << endl;
+        cout << "|----------------------------------------------|" << endl;
         cout << "|"
              << "[" << i << "]" << crick.name << " \t"
              << crick.runScored << "(" << crick.ballsBowled << ") \t\t"
              << crick.ballsBowled << "-" << crick.runsGiven << "-"
              << crick.wicketsTaken << "\t |" << endl;
     }
-    cout << "********************************************" << endl;
+    cout << "****************************************************" << endl;
 }
 
 int main()
